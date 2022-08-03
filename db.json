@@ -9,7 +9,7 @@
     {
       "text": "Go to the theater",
       "day": "21 agost 8pm",
-      "reminder": false,
+      "reminder": true,
       "id": 2
     },
     {
@@ -21,7 +21,7 @@
     {
       "text": "Italian Online Class",
       "day": "Monday 29 at 7am",
-      "reminder": true,
+      "reminder": false,
       "id": 4
     }
   ]
