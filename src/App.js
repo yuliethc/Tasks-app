@@ -1,30 +1,24 @@
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddTask from "./components/AddTask";
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: "Task 1",
-      day: "Feb 5th at 10:00 AM",
-      reminder: false,
-    },
-    {
-      id: 2,
-      text: "Task 2",
-      day: "Feb 6th at 11:00 AM",
-      reminder: true,
-    },
-    {
-      id: 3,
-      text: "Task 3",
-      day: "Feb 7th at 12:00 PM",
-      reminder: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
+  useEffect(() => {
+    const getTasks = async () => {
+      const taksFromServer = await fetchTasks();
+      setTasks(taksFromServer);
+    };
+    getTasks();
+  }, []);
+
+  const fetchTasks = async () => {
+    const res = await fetch("http://localhost:5000/tasks");
+    const data = await res.json();
+    return data;
+  };
 
   const addTask = (text, day, reminder) => {
     setTasks([
