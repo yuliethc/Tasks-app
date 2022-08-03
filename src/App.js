@@ -20,21 +20,25 @@ function App() {
     return data;
   };
 
-  const addTask = (text, day, reminder) => {
-    setTasks([
-      ...tasks,
-      {
-        id: tasks.length + 1,
-        text,
-        day,
-        reminder,
+  const addTask = async (task) => {
+    const res = await fetch("http://localhost:5000/tasks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-    ]);
+      body: JSON.stringify(task),
+    });
+    const data = await res.json();
+    setTasks([...tasks, data]);
   };
 
-  const deleteTask = (id) => {
+  const deleteTask = async (id) => {
+    await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: "DELETE",
+    });
     setTasks(tasks.filter((task) => task.id !== id));
   };
+
   const toggleReminder = (id) => {
     setTasks(
       tasks.map((task) =>

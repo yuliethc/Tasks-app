@@ -10,7 +10,7 @@ const AddTask = (props) => {
     if (text === "" || day === "") {
       alert("Please enter a task and a day");
     } else {
-      props.addTask(text, day, reminder);
+      props.addTask({text, day, reminder});
       setText("");
       setDay("");
       setReminder(false);
