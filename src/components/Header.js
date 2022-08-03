@@ -5,7 +5,7 @@ const Header = (props) => {
         <header className="header">
             <h1>{props.title}</h1>
             <Button 
-            color={props.showAddTask ? "black" : "green"}
+            color={props.showAddTask ? "red" : "green"}
             text={props.showAddTask ? "Close" : "Add"}
             onClick={props.onAdd}
             />
