@@ -68,7 +68,10 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Header onAdd={() => setShowAddTask(!showAddTask)} />
+        <Header
+          onAdd={() => setShowAddTask(!showAddTask)}
+          showAddTask={showAddTask}
+        />
         <Routes>
           <Route
             path="/"
@@ -80,7 +83,6 @@ function App() {
                     tasks={tasks}
                     onDelete={deleteTask}
                     onToggle={toggleReminder}
-                    showAddTask={showAddTask}
                   />
                 ) : (
                   "No tasks to show"
