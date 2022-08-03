@@ -9,19 +9,19 @@
     {
       "text": "Go to the theater",
       "day": "21 agost 8pm",
-      "reminder": false,
+      "reminder": true,
       "id": 2
     },
     {
       "text": "Go to the church",
       "day": "Sun 9am",
-      "reminder": false,
+      "reminder": true,
       "id": 3
     },
     {
       "text": "Italian Online Class",
       "day": "Monday 29 at 7am",
-      "reminder": true,
+      "reminder": false,
       "id": 4
     }
   ]
