@@ -1,15 +1,13 @@
 import Button from "./Button";
 const Header = (props) => {
-   const onClick = () => {
-        props.onAdd();
-    }
+   
     return (
         <header className="header">
             <h1>{props.title}</h1>
             <Button 
-            color="green"
-            text="Add"
-            onClick={onClick}
+            color={props.showAddTask ? "black" : "green"}
+            text={props.showAddTask ? "Close" : "Add"}
+            onClick={props.onAdd}
             />
         </header>
     );
