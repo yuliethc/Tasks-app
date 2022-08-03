@@ -1,7 +1,7 @@
 import Button from "./Button";
 const Header = (props) => {
    const onClick = () => {
-        console.log("Clicked");
+        props.onAdd();
     }
     return (
         <header className="header">
