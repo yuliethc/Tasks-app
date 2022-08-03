@@ -1,5 +1,4 @@
 import Task from "./Task";
-import Button from "./Button";
 
 const Tasks = (props) => {
   return (
@@ -17,11 +16,7 @@ const Tasks = (props) => {
           />
         );
       })}
-      <Button
-        color={props.showAddTask ? "red" : "green"}
-        text={props.showAddTask ? "Close" : "Add"}
-        onClick={props.onAdd}
-      />
+      
     </div>
   );
 };

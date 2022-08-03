@@ -68,25 +68,23 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Header />
+        <Header onAdd={() => setShowAddTask(!showAddTask)} />
         <Routes>
           <Route
             path="/"
             element={
               <>
-                
+                {showAddTask && <AddTask addTask={addTask} />}
                 {tasks.length > 0 ? (
                   <Tasks
                     tasks={tasks}
                     onDelete={deleteTask}
                     onToggle={toggleReminder}
-                    onAdd={() => setShowAddTask(!showAddTask)}
                     showAddTask={showAddTask}
                   />
                 ) : (
                   "No tasks to show"
                 )}
-                {showAddTask && <AddTask addTask={addTask} />}
               </>
             }
           ></Route>
