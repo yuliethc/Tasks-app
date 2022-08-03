@@ -3,19 +3,19 @@
     {
       "text": "Make dinner",
       "day": "9pm",
-      "reminder": true,
+      "reminder": false,
       "id": 1
     },
     {
       "text": "Go to the theater",
       "day": "21 agost 8pm",
-      "reminder": true,
+      "reminder": false,
       "id": 2
     },
     {
       "text": "Go to the church",
       "day": "Sun 9am",
-      "reminder": true,
+      "reminder": false,
       "id": 3
     }
   ]
